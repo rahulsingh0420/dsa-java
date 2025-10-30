@@ -1,20 +1,20 @@
 import java.util.Scanner;
 
-public class Sum {
+public class Largest {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int sum = 0;
+        int largest = 0;
         while (true) {
-            System.out.print("Enter Number (enter 0 to get sum): ");
+            System.out.print("Enter Number: ");
             int num = in.nextInt();
             if (num == 0) {
                 break;
             } else {
-                sum += num;
+                if (largest < num) {
+                    largest = num;
+                }
             }
         }
-        
-        System.out.println("Sum: "+sum);
-
-    }
+        System.out.print("Largest: "+largest);         
+    }    
 }
