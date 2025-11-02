@@ -1,0 +1,27 @@
+import java.util.Arrays;
+
+public class SearchIn2DArr {
+    public static void main(String[] args) {
+        int[][] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9, 10 } };
+        System.out.println(Arrays.toString(search(arr, 6)));
+    }
+
+    static int[] search(int[][] arr, int target) {
+        // int[] ans = new int[2];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] == target) {
+                    return new int[] { i, j };
+                    // ans[0] = i;
+                    // ans[1] = j;
+                    // return ans;
+                }
+            }
+        }
+        return new int[] { -1, -1 };
+        // ans[0] = -1;
+        // ans[1] = -1;
+        // return ans;
+    }
+    
+}
