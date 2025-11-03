@@ -8,7 +8,7 @@ public class Richest {
             if (tempSum > max) {
                 max = tempSum;
             }
-        }
+        }    
         System.out.println(max);
     }
 
