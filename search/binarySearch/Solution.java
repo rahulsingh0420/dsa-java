@@ -3,24 +3,28 @@ import java.util.Arrays;
 class Solution {
 
     public static void main(String[] args) {
-        int[] arr = {2,5,1,3,4,7};
-        System.out.println(Arrays.toString(shuffle(arr, 3)));;
-    }
+        int[][] arr = {{1,2,3},{4,5,6}};
 
-    static int[] shuffle(int[] arr, int n) {
-        int[] newArr = new int[n * 2];
-        int j = 0;
-
-        for (int i = 0; i < n; i++) {
-            newArr[j++] = arr[i]; 
-            newArr[j++] = arr[i + n];
+        int[][] newArr = transpose(arr);
+        for (int i = 0; i < newArr.length; i++) {
+            System.out.println(Arrays.toString(newArr[i]));;
         }
-
-        return newArr;
     }
 
+    static int[][] transpose(int[][] matrix) {
+        for(int row = 0; row<matrix.length-1; row++){
+            swap(row, matrix);
+        }   
+        return matrix;
+    }
 
-
+    static void swap(int i, int[][] matrix){
+        for(int j = i; j < matrix[i].length; j++){
+            int temp = matrix[i][j];
+            matrix[i][j] = matrix[j][i];
+            matrix[j][i] = temp;
+        }
+    }
 
 // 
 }
