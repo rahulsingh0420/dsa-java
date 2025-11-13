@@ -10,7 +10,7 @@ class Solution {
         int s = 0;
         int e = arr.length - 1;
         while (s <= e) {
-            int m = (e + (e - s)) / 2;
+            int m = (s + (e - s)) / 2;
 
             if (arr[m] > target) {
                 e = m - 1;
@@ -18,7 +18,7 @@ class Solution {
                 s = m + 1;
             }
         }
-        return arr[s % arr.length];
+          return arr[s % arr.length];
     }
 
 }
